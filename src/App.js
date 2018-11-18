@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import ComponentOne from './components/ComponentOne';
-import ComponentTwo from './components/ComponentTwo';
+import Display from './components/Display';
+import Controls from './components/Controls';
+
 import './App.css';
 
 import { connect } from 'react-redux';
@@ -12,9 +13,9 @@ import {
 class App extends Component {
   render() {
     return (
-      <div>
-        <ComponentOne />
-        <ComponentTwo />
+      <div id='drum-machine'>
+        <Display />
+        <Controls />
       </div>
     );
   }
