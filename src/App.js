@@ -12,8 +12,16 @@ import {
 
 class App extends Component {
 
-  playSound = (e) => {
-    const audio = document.getElementById(e.target.id.slice(4));
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeydown);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeydown);
+  }
+
+  playSound = (soundId) => {
+    const audio = document.getElementById(soundId);
     if (audio.paused) {
         audio.play();
     }else{
@@ -21,11 +29,49 @@ class App extends Component {
     }
   }
 
+  handleClick = (e) => {
+    this.playSound(e.target.id.slice(4));
+  }
+
+  handleKeydown = (e) => {
+    switch(e.keyCode) {
+      case 81:
+        this.playSound('Q');
+        break;
+      case 87:
+        this.playSound('W');
+        break;
+      case 69:
+        this.playSound('E');
+        break;
+      case 65:
+        this.playSound('A');
+        break;
+      case 83:
+        this.playSound('S');
+        break;
+      case 68:
+        this.playSound('D');
+        break;
+      case 90:
+        this.playSound('Z');
+        break;
+      case 88:
+        this.playSound('X');
+        break;
+      case 67:
+        this.playSound('C');
+        break;
+      default:
+        break;
+    }
+  }
+
   render() {
     return (
       <div id='drum-machine'>
         <Display
-          playSound={this.playSound}
+          handleClick={this.handleClick}
           q={this.props.myData.q}
           qClip={this.props.myData.qClip}
           w={this.props.myData.w}
