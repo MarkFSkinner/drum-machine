@@ -1,8 +1,8 @@
 import React from 'react';
 import DrumPad from './DrumPad';
 
-const Display = props => (
-  <div id='display'>
+const Drums = props => (
+  <div id='drums'>
     <DrumPad
       handleClick={props.handleClick}
       keyPress={props.q}
@@ -52,4 +52,4 @@ const Display = props => (
 );
 
 
-export default Display;
+export default Drums;

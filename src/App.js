@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Display from './components/Display';
+import Drums from './components/Drums';
 import Controls from './components/Controls';
 
 import './App.css';
@@ -70,7 +70,7 @@ class App extends Component {
   render() {
     return (
       <div id='drum-machine'>
-        <Display
+        <Drums
           handleClick={this.handleClick}
           q={this.props.myData.q}
           qClip={this.props.myData.qClip}
