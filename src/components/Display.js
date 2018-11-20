@@ -3,7 +3,6 @@ import DrumPad from './DrumPad';
 
 const Display = props => (
   <div id='display'>
-    <h1>Display</h1>
     <DrumPad
       handleClick={props.handleClick}
       keyPress={props.q}
