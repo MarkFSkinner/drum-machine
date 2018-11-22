@@ -1,1 +1,1 @@
-export const TRIAL_ACTION = 'TRIAL_ACTION';
+export const SET_CURRENT_SOUND = 'SET_CURRENT_SOUND';

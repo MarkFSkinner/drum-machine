@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Controls = () => (
+const Controls = props => (
   <div id='controls'>
-    <h1>Controls</h1>
+    <div id='display'>{props.currentSound}</div>
   </div>
 );
 

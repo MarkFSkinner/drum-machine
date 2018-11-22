@@ -1,10 +1,10 @@
 import {
-  TRIAL_ACTION
+  SET_CURRENT_SOUND
 } from './types';
 
-export const trialAction = (data) => {
+export const setCurrentSound = (data) => {
   return {
-    type: TRIAL_ACTION,
+    type: SET_CURRENT_SOUND,
     payload: data
   }
 }
