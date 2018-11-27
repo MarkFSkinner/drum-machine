@@ -7,13 +7,17 @@ import './App.css';
 import { connect } from 'react-redux';
 
 import {
-  setCurrentSound
+  setCurrentSound,
+  setStandardSounds,
+  setAltSounds,
+  updateStandard
 } from './actions';
 
 class App extends Component {
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeydown);
+    this.setVolume();
   }
 
   componentWillUnmount() {
@@ -32,6 +36,18 @@ class App extends Component {
   handleClick = (e) => {
     this.playSound(e.target.id.slice(4));
     this.props.setCurrentSound(this.showCurrentSound(e.target.id.slice(4)));
+  }
+
+  toggleDrumType = () => {
+    if (this.props.myData.standard) {
+      this.props.setAltSounds();
+      this.props.updateStandard();
+      this.props.setCurrentSound('Electro Kit');
+    } else {
+      this.props.setStandardSounds();
+      this.props.updateStandard();
+      this.props.setCurrentSound('Standard Kit');
+    }
   }
 
   handleKeydown = (e) => {
@@ -102,6 +118,26 @@ class App extends Component {
     }
   }
 
+  setVolume = () => {
+    const result = document.getElementById('my-range').value / 100;
+    const audio = document.getElementsByClassName('clip');
+    for (let i = 0; i < audio.length; i++) {
+      audio[i].volume = result;
+    }
+  }
+
+  handleChange = (e) => {
+    const result = e.target.value / 100;
+    //console.log('result', result);
+    const audio = document.getElementsByClassName('clip');
+    //console.log(audio);
+    //console.log('volume level', audio.volume);
+    for (let i = 0; i < audio.length; i++) {
+      audio[i].volume = result;
+    }
+    //audio.volume = result;
+  }
+
   render() {
     return (
       <div id='drum-machine'>
@@ -135,7 +171,11 @@ class App extends Component {
           cName={this.props.myData.cName}
           cClip={this.props.myData.cClip}
         />
-        <Controls currentSound={this.props.myData.currentSound}/>
+        <Controls
+          currentSound={this.props.myData.currentSound}
+          toggleDrumType={this.toggleDrumType}
+          handleChange={this.handleChange}
+        />
       </div>
     );
   }
@@ -148,5 +188,8 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {
-  setCurrentSound
+  setCurrentSound,
+  setStandardSounds,
+  setAltSounds,
+  updateStandard
 })(App);

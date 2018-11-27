@@ -8,10 +8,10 @@
 
 #drums {
   /*max-width: 500px;*/
-  width: 55%;
+  width: 100%;
   max-height: 500px;
   border: 1px solid black;
-  display: inline-block;
+  display: block;
 }
 
 .drum-pad {
@@ -36,6 +36,71 @@
 
 #controls {
   border: 1px solid blue;
+  width: 100%;
+  display: block;
+}
+
+
+
+.slidecontainer {
+  width: 95%; /* Width of the outside container */
+  margin: auto;
+}
+
+.fas {
+  width: 3%;
+}
+
+.fa-volume-down {
+  margin-right: 5px;
+}
+
+.fa-volume-up {
+  margin-left: 5px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 90%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+
+@media (min-width: 768px) {
+  #drums {
+  width: 55%;
+  /*max-height: 500px;
+  border: 1px solid black;*/
+  display: inline-block;
+}
+
+#controls {
+  /*border: 1px solid blue;*/
   width: 45%;
   display: inline-block;
+}
 }
