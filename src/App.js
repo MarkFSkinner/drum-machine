@@ -10,7 +10,8 @@ import {
   setCurrentSound,
   setStandardSounds,
   setAltSounds,
-  updateStandard
+  updateStandard,
+  setPower
 } from './actions';
 
 class App extends Component {
@@ -25,28 +26,34 @@ class App extends Component {
   }
 
   playSound = (soundId) => {
-    const audio = document.getElementById(soundId);
-    if (audio.paused) {
-        audio.play();
-    }else{
-        audio.currentTime = 0
-    }
+
+      const audio = document.getElementById(soundId);
+      if (audio.paused) {
+          audio.play();
+      }else{
+          audio.currentTime = 0
+      }
+
   }
 
   handleClick = (e) => {
-    this.playSound(e.target.id.slice(4));
-    this.props.setCurrentSound(this.showCurrentSound(e.target.id.slice(4)));
+    if (this.props.myData.power === 'on') {
+      this.playSound(e.target.id.slice(4));
+      this.props.setCurrentSound(this.showCurrentSound(e.target.id.slice(4)));
+    }
   }
 
   toggleDrumType = () => {
-    if (this.props.myData.standard) {
-      this.props.setAltSounds();
-      this.props.updateStandard();
-      this.props.setCurrentSound('Electro Kit');
-    } else {
-      this.props.setStandardSounds();
-      this.props.updateStandard();
-      this.props.setCurrentSound('Standard Kit');
+    if (this.props.myData.power === 'on') {
+      if (this.props.myData.standard) {
+        this.props.setAltSounds();
+        this.props.updateStandard();
+        this.props.setCurrentSound('Electro Kit');
+      } else {
+        this.props.setStandardSounds();
+        this.props.updateStandard();
+        this.props.setCurrentSound('Standard Kit');
+      }
     }
   }
 
@@ -138,6 +145,18 @@ class App extends Component {
     //audio.volume = result;
   }
 
+  powerOn = () => {
+    if (this.props.myData.power === 'off') {
+      this.props.setPower('on');
+    }
+  }
+
+  powerOff = () => {
+    if (this.props.myData.power === 'on') {
+      this.props.setPower('off');
+    }
+  }
+
   render() {
     return (
       <div id='drum-machine'>
@@ -175,6 +194,8 @@ class App extends Component {
           currentSound={this.props.myData.currentSound}
           toggleDrumType={this.toggleDrumType}
           handleChange={this.handleChange}
+          powerOn={this.powerOn}
+          powerOff={this.powerOff}
         />
       </div>
     );
@@ -191,5 +212,6 @@ export default connect(mapStateToProps, {
   setCurrentSound,
   setStandardSounds,
   setAltSounds,
-  updateStandard
+  updateStandard,
+  setPower
 })(App);

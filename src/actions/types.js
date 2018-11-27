@@ -2,4 +2,6 @@ export const SET_CURRENT_SOUND = 'SET_CURRENT_SOUND';
 export const SET_STANDARD_SOUNDS = 'SET_STANDARD_SOUNDS';
 export const SET_ALT_SOUNDS = 'SET_ALT_SOUNDS';
 export const UPDATE_STANDARD = 'UPDATE_STANDARD';
+export const SET_POWER = 'SET_POWER';
+
 

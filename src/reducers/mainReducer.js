@@ -2,7 +2,8 @@ import {
   SET_CURRENT_SOUND,
   SET_STANDARD_SOUNDS,
   SET_ALT_SOUNDS,
-  UPDATE_STANDARD
+  UPDATE_STANDARD,
+  SET_POWER
 } from '../actions/types';
 
 const initialState = {
@@ -35,7 +36,8 @@ const initialState = {
   cName: 'Low Tom',
   cClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/339[kb]ambient_tom_3.aif.mp3',
   currentSound: 'Standard Kit',
-  standard: true
+  standard: true,
+  power: 'on'
 };
 
 export default function(state = initialState, action) {
@@ -93,6 +95,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         standard: !state.standard
+      }
+    case SET_POWER:
+      return {
+        ...state,
+        power: action.payload
       }
     default:
       return state;

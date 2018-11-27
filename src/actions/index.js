@@ -2,7 +2,8 @@ import {
   SET_CURRENT_SOUND,
   SET_STANDARD_SOUNDS,
   SET_ALT_SOUNDS,
-  UPDATE_STANDARD
+  UPDATE_STANDARD,
+  SET_POWER
 } from './types';
 
 export const setCurrentSound = (data) => {
@@ -27,5 +28,12 @@ export const setAltSounds = () => {
 export const updateStandard = () => {
   return {
     type: UPDATE_STANDARD
+  }
+}
+
+export const setPower = (data) => {
+  return {
+    type: SET_POWER,
+    payload: data
   }
 }
