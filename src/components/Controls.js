@@ -18,6 +18,9 @@ const Controls = props => (
     />
     <Volume
       handleChange={props.handleChange}
+      icon={props.icon}
+      toggleMute={props.toggleMute}
+      value={props.value}
     />
   </div>
 );

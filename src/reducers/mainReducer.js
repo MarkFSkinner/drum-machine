@@ -3,7 +3,11 @@ import {
   SET_STANDARD_SOUNDS,
   SET_ALT_SOUNDS,
   UPDATE_STANDARD,
-  SET_POWER
+  SET_POWER,
+  UPDATE_ICON,
+  UPDATE_CURRENT_VOLUME,
+  SET_MUTED,
+  UPDATE_VOLUME_VALUE
 } from '../actions/types';
 
 const initialState = {
@@ -37,7 +41,10 @@ const initialState = {
   cClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/339[kb]ambient_tom_3.aif.mp3',
   currentSound: 'Standard Kit',
   standard: true,
-  power: 'on'
+  power: 'on',
+  icon: 'fa-volume-down',
+  muted: false,
+  value: 50
 };
 
 export default function(state = initialState, action) {
@@ -100,6 +107,26 @@ export default function(state = initialState, action) {
       return {
         ...state,
         power: action.payload
+      }
+    case UPDATE_ICON:
+      return {
+        ...state,
+        icon: action.payload
+      }
+    case UPDATE_CURRENT_VOLUME:
+      return {
+        ...state,
+        currentVolume: action.payload
+      }
+    case SET_MUTED:
+      return {
+        ...state,
+        muted: !state.muted
+      }
+    case UPDATE_VOLUME_VALUE:
+      return {
+        ...state,
+        value: action.payload
       }
     default:
       return state;

@@ -11,7 +11,11 @@ import {
   setStandardSounds,
   setAltSounds,
   updateStandard,
-  setPower
+  setPower,
+  updateIcon,
+  updateCurrentVolume,
+  setMuted,
+  updateVolumeValue
 } from './actions';
 
 class App extends Component {
@@ -134,15 +138,18 @@ class App extends Component {
   }
 
   handleChange = (e) => {
-    const result = e.target.value / 100;
-    //console.log('result', result);
-    const audio = document.getElementsByClassName('clip');
-    //console.log(audio);
-    //console.log('volume level', audio.volume);
-    for (let i = 0; i < audio.length; i++) {
-      audio[i].volume = result;
+    if (this.props.myData.power === 'on') {
+      const result = e.target.value / 100;
+      //console.log('result', result);
+      const audio = document.getElementsByClassName('clip');
+      //console.log(audio);
+      //console.log('volume level', audio.volume);
+      for (let i = 0; i < audio.length; i++) {
+        audio[i].volume = result;
+      }
+      //audio.volume = result;
+      this.props.updateVolumeValue(e.target.value);
     }
-    //audio.volume = result;
   }
 
   powerOn = () => {
@@ -154,6 +161,41 @@ class App extends Component {
   powerOff = () => {
     if (this.props.myData.power === 'on') {
       this.props.setPower('off');
+    }
+  }
+
+  mute = () => {
+    //console.log('RUN MUTE');
+    this.props.setMuted();
+    const volume = document.getElementById('my-range').value / 100;
+    this.props.updateCurrentVolume(volume);
+    this.props.updateIcon('fa-volume-mute');
+    const audio = document.getElementsByClassName('clip');
+    for (let i = 0; i < audio.length; i++) {
+      audio[i].volume = 0;
+    }
+    this.props.updateVolumeValue(0);
+  }
+
+  unmute = () => {
+    //console.log('RUN UNMUTE');
+    this.props.setMuted();
+    this.props.updateIcon('fa-volume-down');
+    const audio = document.getElementsByClassName('clip');
+    for (let i = 0; i < audio.length; i++) {
+      audio[i].volume = this.props.myData.currentVolume;
+    }
+    console.log('currentVolume', this.props.myData.currentVolume);
+    this.props.updateVolumeValue(this.props.myData.currentVolume * 100);
+  }
+
+  toggleMute = () => {
+    if (this.props.myData.power === 'on') {
+      if (this.props.myData.muted === false) {
+        this.mute();
+      } else {
+        this.unmute();
+      }
     }
   }
 
@@ -196,6 +238,9 @@ class App extends Component {
           handleChange={this.handleChange}
           powerOn={this.powerOn}
           powerOff={this.powerOff}
+          icon={this.props.myData.icon}
+          toggleMute={this.toggleMute}
+          value={this.props.myData.value}
         />
       </div>
     );
@@ -213,5 +258,9 @@ export default connect(mapStateToProps, {
   setStandardSounds,
   setAltSounds,
   updateStandard,
-  setPower
+  setPower,
+  updateIcon,
+  updateCurrentVolume,
+  setMuted,
+  updateVolumeValue
 })(App);

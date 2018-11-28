@@ -3,7 +3,11 @@ import {
   SET_STANDARD_SOUNDS,
   SET_ALT_SOUNDS,
   UPDATE_STANDARD,
-  SET_POWER
+  SET_POWER,
+  UPDATE_ICON,
+  UPDATE_CURRENT_VOLUME,
+  SET_MUTED,
+  UPDATE_VOLUME_VALUE
 } from './types';
 
 export const setCurrentSound = (data) => {
@@ -34,6 +38,33 @@ export const updateStandard = () => {
 export const setPower = (data) => {
   return {
     type: SET_POWER,
+    payload: data
+  }
+}
+
+export const updateIcon = (data) => {
+  return {
+    type: UPDATE_ICON,
+    payload: data
+  }
+}
+
+export const updateCurrentVolume = (data) => {
+  return {
+    type: UPDATE_CURRENT_VOLUME,
+    payload: data
+  }
+}
+
+export const setMuted = () => {
+  return {
+    type: SET_MUTED
+  }
+}
+
+export const updateVolumeValue = (data) => {
+  return {
+    type: UPDATE_VOLUME_VALUE,
     payload: data
   }
 }
