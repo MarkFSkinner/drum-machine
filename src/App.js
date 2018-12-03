@@ -179,6 +179,10 @@ class App extends Component {
         audio[i].volume = result;
       }
       this.props.updateVolumeValue(e.target.value);
+      if (this.props.myData.muted) {
+        this.props.setMuted();
+        this.props.updateIcon('fa-volume-down');
+      }
     }
   }
 
@@ -204,6 +208,18 @@ class App extends Component {
       audio[i].volume = 0;
     }
     this.props.updateVolumeValue(0);
+  }
+
+  setMaxVolume = () => {
+    const audio = document.getElementsByClassName('clip');
+    for (let i = 0; i < audio.length; i++) {
+      audio[i].volume = 1;
+    }
+    this.props.updateVolumeValue(100);
+    if (this.props.myData.muted) {
+      this.props.setMuted();
+      this.props.updateIcon('fa-volume-down');
+    }
   }
 
   unmute = () => {
@@ -277,6 +293,7 @@ class App extends Component {
           icon={this.props.myData.icon}
           toggleMute={this.toggleMute}
           value={this.props.myData.value}
+          setMaxVolume={this.setMaxVolume}
         />
       </div>
     );

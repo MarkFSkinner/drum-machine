@@ -17,6 +17,7 @@ const Controls = props => (
       icon={props.icon}
       toggleMute={props.toggleMute}
       value={props.value}
+      setMaxVolume={props.setMaxVolume}
     />
     <Power
       powerOff={props.powerOff}

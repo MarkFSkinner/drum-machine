@@ -54,6 +54,7 @@
 }
 
 .fa-volume-up {
+  cursor: pointer;
   padding-left: 7px;
 }
 
