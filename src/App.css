@@ -1,21 +1,22 @@
 #drum-machine {
-  border: 2px solid purple;
+  border: 4px solid #40464b;
   margin: auto;
   margin-top: 100px;
-  max-width: 900px;
+  max-width: 800px;
   padding: 20px;
 }
 
 #drums {
-  /*max-width: 500px;*/
+  /*border: 1px solid black;*/
+  max-width: 350px;
   width: 100%;
   max-height: 500px;
-  border: 1px solid black;
   display: block;
+  margin: auto;
 }
 
 .drum-pad {
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   width: 33%;
   display: inline-block;
   margin-top: 5px;
@@ -23,7 +24,7 @@
 }
 
 .pad-container {
-  border: 1px solid green;
+  /*border: 1px solid green;*/
   width: 100px;
   height: 100px;
   margin: auto;
@@ -32,37 +33,49 @@
 .btn-drum {
   width: 100%;
   height: 100%;
+  -webkit-box-shadow: 0px 7px 14px 2px rgba(0,0,0,0.7);
+  -moz-box-shadow: 0px 7px 14px 2px rgba(0,0,0,0.7);
+  box-shadow: 0px 7px 14px 2px rgba(0,0,0,0.7);
+  /*-webkit-box-shadow: 8px 6px 10px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 8px 6px 10px -3px rgba(0,0,0,0.75);
+  box-shadow: 8px 6px 10px -3px rgba(0,0,0,0.75);*/
 }
 
 #controls {
-  border: 1px solid blue;
+  /*border: 1px solid blue;*/
   width: 100%;
   display: block;
+  max-width: 380px;
+  margin: auto;
+  margin-top: 20px;
 }
 
 
 
 .slidecontainer {
-  width: 95%; /* Width of the outside container */
+  width: 95%;
   margin: auto;
 }
 
 .fas {
-  width: 3%;
+  width: 7%;
 }
 
 .fa-volume-down, .fa-volume-mute {
-  margin-right: 7px;
+  /*margin-right: 7px;*/
   cursor: pointer;
+  text-align: right;
+  padding-right: 7px;
 }
 
 .fa-volume-up {
-  margin-left: 7px;
+  /*margin-left: 7px;*/
+  padding-left: 7px;
 }
 
 .slider {
   -webkit-appearance: none;
-  width: 90%;
+  width: 86%;
   height: 15px;
   border-radius: 5px;
   background: #d3d3d3;
@@ -78,7 +91,8 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #4CAF50;
+  /*background: #4CAF50;*/
+  background: #2b2e32;
   cursor: pointer;
 }
 
@@ -86,22 +100,107 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #4CAF50;
+  /*background: #4CAF50;*/
+  background: #2b2e32;
   cursor: pointer;
 }
 
 
 @media (min-width: 768px) {
   #drums {
-  width: 55%;
-  /*max-height: 500px;
-  border: 1px solid black;*/
-  display: inline-block;
+    width: 45%;
+    /*max-height: 500px;
+    border: 1px solid black;*/
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  #controls {
+    /*border: 1px solid blue;*/
+    width: 45%;
+    display: inline-block;
+    margin-left: 50px;
+    margin-top: 0px;
+    vertical-align: 20px;
+  }
 }
 
-#controls {
-  /*border: 1px solid blue;*/
-  width: 45%;
-  display: inline-block;
+#display {
+  border: 2px solid black;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 90%;
+  margin: auto;
 }
+
+#power {
+  /*border: 1px solid red;*/
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#power-btns {
+  /*border: 1px solid green;*/
+  margin: auto;
+  width: 105px;
+  display: block;
+  /*margin-left: 100px;*/
+}
+
+label {
+  width: 50%;
+}
+
+
+#selector {
+  /*border: 1px solid black;*/
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#drum-selector {
+  /*border: 1px solid green;*/
+  margin: auto;
+  /*max-width: 105px;*/
+  display: block;
+}
+
+#volume-control {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*.pulse {
+  animation-name: pulse;
+  animation-duration: 0.5s;
+}*/
+
+/*#btn-Q:active {
+  animation-name: pulse;
+  animation-duration: 0.5s;
+}*/
+
+.Q-pulse, .W-pulse, .E-pulse, .A-pulse, .S-pulse, .D-pulse, .Z-pulse, .X-pulse, .C-pulse {
+  animation-name: pulse;
+  animation-duration: 0.5s;
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+  -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
 }
