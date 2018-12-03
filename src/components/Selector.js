@@ -6,5 +6,4 @@ const Selector = props => (
   </div>
 );
 
-
 export default Selector;

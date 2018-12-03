@@ -4,5 +4,4 @@ const Display = props => (
   <div id='display'>{props.currentSound}</div>
 );
 
-
 export default Display;

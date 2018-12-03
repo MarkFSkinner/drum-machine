@@ -69,5 +69,4 @@ const Drums = props => (
   </div>
 );
 
-
 export default Drums;

@@ -15,7 +15,6 @@ import {
   updateIcon,
   updateCurrentVolume,
   setMuted,
-  //updateAnimation,
   updateVolumeValue,
   updateAnimationQ,
   updateAnimationW,
@@ -32,34 +31,26 @@ class App extends Component {
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeydown);
-    document.addEventListener('keyup', this.handleKeyup);
     this.setVolume();
   }
 
   componentWillUnmount() {
     document.removeEventListener('keydown', this.handleKeydown);
-    document.removeEventListener('keyup', this.handleKeyup);
   }
 
   playSound = (soundId) => {
-      const audio = document.getElementById(soundId);
-      if (audio.paused) {
-          audio.play();
-      }else{
-          audio.currentTime = 0
-      }
-
+    const audio = document.getElementById(soundId);
+    if (audio.paused) {
+      audio.play();
+    }else{
+      audio.currentTime = 0
+    }
   }
 
   handleClick = (e) => {
     if (this.props.myData.power === 'on') {
       this.playSound(e.target.id.slice(4));
       this.props.setCurrentSound(this.showCurrentSound(e.target.id.slice(4)));
-      /*this.props.updateAnimation(e.target.id.slice(4), e.target.id.slice(4) + '-pulse');
-      setTimeout(() => {
-        console.log("RUUUNNNNNNNNNNNN");
-        this.props.updateAnimation('');
-      }, 200);*/
     }
   }
 
@@ -81,47 +72,34 @@ class App extends Component {
     switch(e.keyCode) {
       case 81:
         document.getElementById('btn-Q').click();
-        //this.playSound('Q');
         break;
       case 87:
         document.getElementById('btn-W').click();
-        //this.playSound('W');
         break;
       case 69:
         document.getElementById('btn-E').click();
-        //this.playSound('E');
         break;
       case 65:
         document.getElementById('btn-A').click();
-        //this.playSound('A');
         break;
       case 83:
         document.getElementById('btn-S').click();
-        //this.playSound('S');
         break;
       case 68:
         document.getElementById('btn-D').click();
-        //this.playSound('D');
         break;
       case 90:
         document.getElementById('btn-Z').click();
-        //this.playSound('Z');
         break;
       case 88:
         document.getElementById('btn-X').click();
-        //this.playSound('X');
         break;
       case 67:
         document.getElementById('btn-C').click();
-        //this.playSound('C');
         break;
       default:
         break;
     }
-  }
-
-  handleKeyup = (e) => {
-    //this.props.updateAnimation('');
   }
 
   showCurrentSound = (sound) => {
@@ -196,14 +174,10 @@ class App extends Component {
   handleChange = (e) => {
     if (this.props.myData.power === 'on') {
       const result = e.target.value / 100;
-      //console.log('result', result);
       const audio = document.getElementsByClassName('clip');
-      //console.log(audio);
-      //console.log('volume level', audio.volume);
       for (let i = 0; i < audio.length; i++) {
         audio[i].volume = result;
       }
-      //audio.volume = result;
       this.props.updateVolumeValue(e.target.value);
     }
   }
@@ -221,7 +195,6 @@ class App extends Component {
   }
 
   mute = () => {
-    //console.log('RUN MUTE');
     this.props.setMuted();
     const volume = document.getElementById('my-range').value / 100;
     this.props.updateCurrentVolume(volume);
@@ -234,14 +207,12 @@ class App extends Component {
   }
 
   unmute = () => {
-    //console.log('RUN UNMUTE');
     this.props.setMuted();
     this.props.updateIcon('fa-volume-down');
     const audio = document.getElementsByClassName('clip');
     for (let i = 0; i < audio.length; i++) {
       audio[i].volume = this.props.myData.currentVolume;
     }
-    console.log('currentVolume', this.props.myData.currentVolume);
     this.props.updateVolumeValue(this.props.myData.currentVolume * 100);
   }
 
@@ -328,7 +299,6 @@ export default connect(mapStateToProps, {
   updateCurrentVolume,
   setMuted,
   updateVolumeValue,
-  //updateAnimation,
   updateAnimationQ,
   updateAnimationW,
   updateAnimationE,

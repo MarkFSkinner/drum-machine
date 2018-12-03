@@ -8,5 +8,4 @@ const Volume = props => (
   </div>
 );
 
-
 export default Volume;

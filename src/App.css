@@ -7,7 +7,6 @@
 }
 
 #drums {
-  /*border: 1px solid black;*/
   max-width: 350px;
   width: 100%;
   max-height: 500px;
@@ -16,7 +15,6 @@
 }
 
 .drum-pad {
-  /*border: 1px solid red;*/
   width: 33%;
   display: inline-block;
   margin-top: 5px;
@@ -24,7 +22,6 @@
 }
 
 .pad-container {
-  /*border: 1px solid green;*/
   width: 100px;
   height: 100px;
   margin: auto;
@@ -36,13 +33,9 @@
   -webkit-box-shadow: 0px 7px 14px 2px rgba(0,0,0,0.7);
   -moz-box-shadow: 0px 7px 14px 2px rgba(0,0,0,0.7);
   box-shadow: 0px 7px 14px 2px rgba(0,0,0,0.7);
-  /*-webkit-box-shadow: 8px 6px 10px -3px rgba(0,0,0,0.75);
-  -moz-box-shadow: 8px 6px 10px -3px rgba(0,0,0,0.75);
-  box-shadow: 8px 6px 10px -3px rgba(0,0,0,0.75);*/
 }
 
 #controls {
-  /*border: 1px solid blue;*/
   width: 100%;
   display: block;
   max-width: 380px;
@@ -50,27 +43,23 @@
   margin-top: 20px;
 }
 
-
-
-.slidecontainer {
-  width: 95%;
-  margin: auto;
-}
-
 .fas {
   width: 7%;
 }
 
 .fa-volume-down, .fa-volume-mute {
-  /*margin-right: 7px;*/
   cursor: pointer;
   text-align: right;
   padding-right: 7px;
 }
 
 .fa-volume-up {
-  /*margin-left: 7px;*/
   padding-left: 7px;
+}
+
+.slidecontainer {
+  width: 95%;
+  margin: auto;
 }
 
 .slider {
@@ -91,7 +80,6 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  /*background: #4CAF50;*/
   background: #2b2e32;
   cursor: pointer;
 }
@@ -100,7 +88,6 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  /*background: #4CAF50;*/
   background: #2b2e32;
   cursor: pointer;
 }
@@ -109,14 +96,11 @@
 @media (min-width: 768px) {
   #drums {
     width: 45%;
-    /*max-height: 500px;
-    border: 1px solid black;*/
     display: inline-block;
     margin-left: 10px;
   }
 
   #controls {
-    /*border: 1px solid blue;*/
     width: 45%;
     display: inline-block;
     margin-left: 50px;
@@ -138,17 +122,14 @@
 }
 
 #power {
-  /*border: 1px solid red;*/
   width: 100%;
   margin-bottom: 10px;
 }
 
 #power-btns {
-  /*border: 1px solid green;*/
   margin: auto;
   width: 105px;
   display: block;
-  /*margin-left: 100px;*/
 }
 
 label {
@@ -157,16 +138,13 @@ label {
 
 
 #selector {
-  /*border: 1px solid black;*/
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 #drum-selector {
-  /*border: 1px solid green;*/
   margin: auto;
-  /*max-width: 105px;*/
   display: block;
 }
 
@@ -186,16 +164,6 @@ label {
     transform: scale(1);
   }
 }
-
-/*.pulse {
-  animation-name: pulse;
-  animation-duration: 0.5s;
-}*/
-
-/*#btn-Q:active {
-  animation-name: pulse;
-  animation-duration: 0.5s;
-}*/
 
 .Q-pulse, .W-pulse, .E-pulse, .A-pulse, .S-pulse, .D-pulse, .Z-pulse, .X-pulse, .C-pulse {
   animation-name: pulse;

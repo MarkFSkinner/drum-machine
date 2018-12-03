@@ -78,13 +78,6 @@ export const updateVolumeValue = (data) => {
   }
 }
 
-/*export const updateAnimation = (data) => {
-  return {
-    type: UPDATE__ANIMATION,
-    payload: data
-  }
-}*/
-
 export const updateAnimationQ = (data) => {
   return {
     type: UPDATE_Q_ANIMATION,
