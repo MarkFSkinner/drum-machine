@@ -15,22 +15,33 @@ import {
   updateIcon,
   updateCurrentVolume,
   setMuted,
-  updateVolumeValue
+  //updateAnimation,
+  updateVolumeValue,
+  updateAnimationQ,
+  updateAnimationW,
+  updateAnimationE,
+  updateAnimationA,
+  updateAnimationS,
+  updateAnimationD,
+  updateAnimationZ,
+  updateAnimationX,
+  updateAnimationC
 } from './actions';
 
 class App extends Component {
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeydown);
+    document.addEventListener('keyup', this.handleKeyup);
     this.setVolume();
   }
 
   componentWillUnmount() {
     document.removeEventListener('keydown', this.handleKeydown);
+    document.removeEventListener('keyup', this.handleKeyup);
   }
 
   playSound = (soundId) => {
-
       const audio = document.getElementById(soundId);
       if (audio.paused) {
           audio.play();
@@ -44,6 +55,11 @@ class App extends Component {
     if (this.props.myData.power === 'on') {
       this.playSound(e.target.id.slice(4));
       this.props.setCurrentSound(this.showCurrentSound(e.target.id.slice(4)));
+      /*this.props.updateAnimation(e.target.id.slice(4), e.target.id.slice(4) + '-pulse');
+      setTimeout(() => {
+        console.log("RUUUNNNNNNNNNNNN");
+        this.props.updateAnimation('');
+      }, 200);*/
     }
   }
 
@@ -104,25 +120,65 @@ class App extends Component {
     }
   }
 
+  handleKeyup = (e) => {
+    //this.props.updateAnimation('');
+  }
+
   showCurrentSound = (sound) => {
     switch(sound) {
       case 'Q':
+        this.props.updateAnimationQ('Q-pulse');
+        setTimeout(() => {
+          this.props.updateAnimationQ('');
+        }, 200);
         return this.props.myData.qName;
       case 'W':
+        this.props.updateAnimationW('W-pulse');
+        setTimeout(() => {
+          this.props.updateAnimationW('');
+        }, 200);
         return this.props.myData.wName;
       case 'E':
+        this.props.updateAnimationE('E-pulse');
+        setTimeout(() => {
+          this.props.updateAnimationE('');
+        }, 200);
         return this.props.myData.eName;
       case 'A':
+        this.props.updateAnimationA('A-pulse');
+        setTimeout(() => {
+          this.props.updateAnimationA('');
+        }, 200);
         return this.props.myData.aName;
       case 'S':
+        this.props.updateAnimationS('S-pulse');
+        setTimeout(() => {
+          this.props.updateAnimationS('');
+        }, 200);
         return this.props.myData.sName;
       case 'D':
+        this.props.updateAnimationD('D-pulse');
+        setTimeout(() => {
+          this.props.updateAnimationD('');
+        }, 200);
         return this.props.myData.dName;
       case 'Z':
+        this.props.updateAnimationZ('Z-pulse');
+        setTimeout(() => {
+          this.props.updateAnimationZ('');
+        }, 200);
         return this.props.myData.zName;
       case 'X':
+        this.props.updateAnimationX('X-pulse');
+        setTimeout(() => {
+          this.props.updateAnimationX('');
+        }, 200);
         return this.props.myData.xName;
       case 'C':
+        this.props.updateAnimationC('C-pulse');
+        setTimeout(() => {
+          this.props.updateAnimationC('');
+        }, 200);
         return this.props.myData.cName;
       default:
         break;
@@ -231,6 +287,15 @@ class App extends Component {
           c={this.props.myData.c}
           cName={this.props.myData.cName}
           cClip={this.props.myData.cClip}
+          qAnimation={this.props.myData.qAnimation}
+          wAnimation={this.props.myData.wAnimation}
+          eAnimation={this.props.myData.eAnimation}
+          aAnimation={this.props.myData.aAnimation}
+          sAnimation={this.props.myData.sAnimation}
+          dAnimation={this.props.myData.dAnimation}
+          zAnimation={this.props.myData.zAnimation}
+          xAnimation={this.props.myData.xAnimation}
+          cAnimation={this.props.myData.cAnimation}
         />
         <Controls
           currentSound={this.props.myData.currentSound}
@@ -262,5 +327,15 @@ export default connect(mapStateToProps, {
   updateIcon,
   updateCurrentVolume,
   setMuted,
-  updateVolumeValue
+  updateVolumeValue,
+  //updateAnimation,
+  updateAnimationQ,
+  updateAnimationW,
+  updateAnimationE,
+  updateAnimationA,
+  updateAnimationS,
+  updateAnimationD,
+  updateAnimationZ,
+  updateAnimationX,
+  updateAnimationC
 })(App);

@@ -7,7 +7,17 @@ import {
   UPDATE_ICON,
   UPDATE_CURRENT_VOLUME,
   SET_MUTED,
-  UPDATE_VOLUME_VALUE
+  UPDATE_VOLUME_VALUE,
+  UPDATE_Q_ANIMATION,
+  UPDATE_W_ANIMATION,
+  UPDATE_E_ANIMATION,
+  UPDATE_A_ANIMATION,
+  UPDATE_S_ANIMATION,
+  UPDATE_D_ANIMATION,
+  UPDATE_Z_ANIMATION,
+  UPDATE_X_ANIMATION,
+  UPDATE_C_ANIMATION
+
 } from '../actions/types';
 
 const initialState = {
@@ -44,7 +54,16 @@ const initialState = {
   power: 'on',
   icon: 'fa-volume-down',
   muted: false,
-  value: 50
+  value: 50,
+  qAnimation: '',
+  wAnimation: '',
+  eAnimation: '',
+  aAnimation: '',
+  sAnimation: '',
+  dAnimation: '',
+  zAnimation: '',
+  xAnimation: '',
+  cAnimation: ''
 };
 
 export default function(state = initialState, action) {
@@ -87,7 +106,7 @@ export default function(state = initialState, action) {
         eClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/rides/46[kb]electroride.aif.mp3',
         aName: 'Electro Snare',
         aClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/snares/12[kb]elecsnare.aif.mp3',
-        sName: 'High Electro om',
+        sName: 'High Electro Tom',
         sClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/86[kb]hietom.aif.mp3',
         dName: 'Mid Electro Tom',
         dClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/86[kb]medetom.aif.mp3',
@@ -127,6 +146,51 @@ export default function(state = initialState, action) {
       return {
         ...state,
         value: action.payload
+      }
+    case UPDATE_Q_ANIMATION:
+      return {
+        ...state,
+        qAnimation: action.payload
+      }
+    case UPDATE_W_ANIMATION:
+      return {
+        ...state,
+        wAnimation: action.payload
+      }
+    case UPDATE_E_ANIMATION:
+      return {
+        ...state,
+        eAnimation: action.payload
+      }
+    case UPDATE_A_ANIMATION:
+      return {
+        ...state,
+        aAnimation: action.payload
+      }
+    case UPDATE_S_ANIMATION:
+      return {
+        ...state,
+        sAnimation: action.payload
+      }
+    case UPDATE_D_ANIMATION:
+      return {
+        ...state,
+        dAnimation: action.payload
+      }
+    case UPDATE_Z_ANIMATION:
+      return {
+        ...state,
+        zAnimation: action.payload
+      }
+    case UPDATE_X_ANIMATION:
+      return {
+        ...state,
+        xAnimation: action.payload
+      }
+    case UPDATE_C_ANIMATION:
+      return {
+        ...state,
+        cAnimation: action.payload
       }
     default:
       return state;
