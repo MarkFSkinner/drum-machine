@@ -1,7 +1,6 @@
 #drum-machine {
   border: 4px solid #40464b;
   margin: auto;
-  margin-top: 100px;
   max-width: 800px;
   padding: 20px;
 }
@@ -95,6 +94,10 @@
 
 
 @media (min-width: 768px) {
+  #drum-machine {
+    margin-top: 100px;
+  }
+
   #drums {
     width: 45%;
     display: inline-block;
