@@ -17,8 +17,121 @@ import {
   UPDATE_Z_ANIMATION,
   UPDATE_X_ANIMATION,
   UPDATE_C_ANIMATION
-
 } from '../actions/types';
+
+/*const standardSounds = [
+  {
+    keyToPress: 'Q',
+    soundName: 'Crash Cymbal',
+    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/crashes/92[kb]909-bright-crash.aif.mp3',
+    keyCode: 81
+  },
+  {
+    keyToPress: 'W',
+    soundName: 'Open Hi-hat',
+    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/hats/88[kb]bigopenhh.aif.mp3',
+    keyCode: 87
+  },
+  {
+    keyToPress: 'E',
+    soundName: 'Ride Cymbal',
+    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/rides/87[kb]cleanride.aif.mp3',
+    keyCode: 69
+  },
+  {
+    keyToPress: 'A',
+    soundName: 'Snare',
+    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/snares/56[kb]ambient_snare.aif.mp3',
+    keyCode: 65
+  },
+  {
+    keyToPress: 'S',
+    soundName: 'High Tom',
+    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/260[kb]ambient_tom_1.aif.mp3',
+    keyCode: 83
+  },
+  {
+    keyToPress: 'D',
+    soundName: 'Mid Tom',
+    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/307[kb]ambient_tom_2.aif.mp3',
+    keyCode: 68
+  },
+  {
+    keyToPress: 'Z',
+    soundName: 'Closed Hi-hat',
+    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/hats/10[kb]clear-hat.aif.mp3',
+    keyCode: 90
+  },
+  {
+    keyToPress: 'X',
+    soundName: 'Bass Drum',
+    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/kicks/160[kb]ambient_kick.aif.mp3',
+    keyCode: 88
+  },
+  {
+    keyToPress: 'C',
+    soundName: 'Low Tom',
+    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/339[kb]ambient_tom_3.aif.mp3',
+    keyCode: 67
+  }
+];
+
+const electroSounds = [
+  {
+    keyToPress: 'Q',
+    soundName: 'Space Crash Cymbal',
+    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/crashes/281[kb]spacecrash.aif.mp3',
+    keyCode: 81
+  },
+  {
+    keyToPress: 'W',
+    soundName: 'Clap',
+    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/claps/13[kb]Clap2.wav.mp3',
+    keyCode: 87
+  },
+  {
+    keyToPress: 'E',
+    soundName: 'Electro Ride Cymbal',
+    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/rides/46[kb]electroride.aif.mp3',
+    keyCode: 69
+  },
+  {
+    keyToPress: 'A',
+    soundName: 'Electro Snare',
+    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/snares/12[kb]elecsnare.aif.mp3',
+    keyCode: 65
+  },
+  {
+    keyToPress: 'S',
+    soundName: 'High Electro Tom',
+    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/86[kb]hietom.aif.mp3',
+    keyCode: 83
+  },
+  {
+    keyToPress: 'D',
+    soundName: 'Mid Electro Tom',
+    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/86[kb]medetom.aif.mp3',
+    keyCode: 68
+  },
+  {
+    keyToPress: 'Z',
+    soundName: 'Closed Electro Hi-hat',
+    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/hats/79[kb]ehat.aif.mp3',
+    keyCode: 90
+  },
+  {
+    keyToPress: 'X',
+    soundName: 'Dance Kick',
+    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/kicks/86[kb]deep_dance_kick_1.aif.mp3',
+    keyCode: 88
+  },
+  {
+    keyToPress: 'C',
+    soundName: 'Low Electro Tom',
+    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/86[kb]loetom.aif.mp3',
+    keyCode: 67
+  }
+];*/
 
 const initialState = {
   q: 'Q',
