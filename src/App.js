@@ -40,11 +40,8 @@ class App extends Component {
 
   playSound = (soundId) => {
     const audio = document.getElementById(soundId);
-    if (audio.paused) {
-      audio.play();
-    }else{
-      audio.currentTime = 0
-    }
+    audio.currentTime = 0
+    audio.play();
   }
 
   handleClick = (e) => {
