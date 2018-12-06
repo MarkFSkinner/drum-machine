@@ -40,19 +40,15 @@ class App extends Component {
 
   playSound = (soundId) => {
     const audio = document.getElementById(soundId);
-    if (audio.paused) {
-      audio.play();
-    } else{
-      audio.currentTime = 0
-    }
+    console.log('audio', audio);
+    audio.currentTime = 0
+    audio.play();
   }
 
   handleClick = (e) => {
     let sound;
-    //console.log(this.props.myData.qName);
     switch(e.target.id) {
       case this.props.myData.qName.replace(" ", "-").toLowerCase():
-        //console.log("QQQQQQQQ");
         sound = 'Q';
         break;
       case this.props.myData.wName.replace(" ", "-").toLowerCase():
