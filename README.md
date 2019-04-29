@@ -1,3 +1,13 @@
+# Drum Machine (React/Redux)
+
+Part of the freeCodeCamp front end developer curriculum
+
+See the requirements [here](https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-drum-machine)
+
+### Please visit my web app [here!](https://drum-machine-5bfd0.firebaseapp.com/)
+
+/////////////////////////////////////////////////////////////////////////////////
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
