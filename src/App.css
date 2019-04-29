@@ -8,17 +8,17 @@ body {
   border: 4px solid #E37222;
   background-color: hsl(0, 0%, 95%);
   width: 95%;
-  max-width: 800px;
+  max-width: 50rem;
   margin: auto;
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
-  padding: 20px;
+  padding: 1.25rem;
 }
 
 #drums {
-  max-width: 350px;
+  max-width: 21.875rem;
   width: 100%;
-  max-height: 500px;
+  max-height: 31.25rem;
   display: block;
   margin: auto;
 }
@@ -26,28 +26,57 @@ body {
 .pad-container {
   width: 33%;
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 0.3125rem;
+  margin-bottom: 0.3125rem;
 }
 
 .drum-pad {
-  width: 100px;
-  height: 100px;
-  /*margin: auto;*/
-  margin-left: 5px;
-  /*border-radius: 5px;*/
+  width: 6.25rem;
+  height: 6.25rem;
+  margin-left: 0.3125rem;
+  padding-top: 2.1rem;
   -webkit-box-shadow: 0px 5px 10px rgba(0,0,0,0.7);
   -moz-box-shadow: 0px 5px 10px rgba(0,0,0,0.7);
   box-shadow: 0px 5px 10px rgba(0,0,0,0.7);
-  padding-top: 35px;
 }
 
 #controls {
-  width: 100%;
   display: block;
-  max-width: 380px;
+  width: 100%;
+  max-width: 23.75rem;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 1.25rem;
+}
+
+#selector {
+  width: 100%;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+}
+
+#drum-selector {
+  display: block;
+  margin: auto;
+}
+
+#display {
+  border: 2px solid #E37222;
+  background-color: #078898;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-align: center;
+  width: 90%;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+  margin: auto;
+  padding: 1.25rem;
+}
+
+#volume-control {
+  color: #E37222;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
 }
 
 .fas {
@@ -57,12 +86,12 @@ body {
 .fa-volume-down, .fa-volume-mute {
   cursor: pointer;
   text-align: right;
-  padding-right: 7px;
+  padding-right: 0.4375rem;
 }
 
 .fa-volume-up {
   cursor: pointer;
-  padding-left: 7px;
+  padding-left: 0.4375rem;
 }
 
 .slidecontainer {
@@ -73,7 +102,7 @@ body {
 .slider {
   -webkit-appearance: none;
   width: 86%;
-  height: 15px;
+  height: 0.9375rem;
   border-radius: 5px;
   background: #d3d3d3;
   outline: none;
@@ -85,67 +114,34 @@ body {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
+  width: 1.5625rem;
+  height: 1.5625rem;
   border-radius: 50%;
-  /*background: #2b2e32;*/
   cursor: pointer;
   background: #E37222;
 }
 
 .slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
+  width: 1.5625rem;
+  height: 1.5625rem;
   border-radius: 50%;
   background: #2b2e32;
   cursor: pointer;
 }
 
-#display {
-  border: 2px solid #E37222;
-  background-color: #078898;
-  color: #fff;
-  padding: 20px;
-  font-weight: bold;
-  font-size: 1.25rem;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 90%;
-  margin: auto;
-}
-
 #power {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 #power-btns {
-  margin: auto;
-  width: 105px;
   display: block;
+  width: 6.5625rem;
+  margin: auto;
 }
 
 label {
   width: 50%;
-}
-
-
-#selector {
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-#drum-selector {
-  margin: auto;
-  display: block;
-}
-
-#volume-control {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  color: #E37222;
 }
 
 @keyframes pulse {
@@ -167,8 +163,6 @@ label {
   -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
   box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
 }
-
-
 
 .btn-custom {
   border-radius: 0rem;
@@ -194,24 +188,23 @@ label {
   background-color: #E37222;
 }
 
-
 @media (min-width: 768px) {
   #drum-machine {
-    margin-top: 100px;
+    margin-top: 6.25rem;
   }
 
   #drums {
-    width: 45%;
     display: inline-block;
-    margin-left: 10px;
+    width: 45%;
+    margin-left: 0.625rem;
   }
 
   #controls {
-    width: 45%;
     display: inline-block;
-    margin-left: 50px;
-    margin-top: 0px;
-    vertical-align: 20px;
+    vertical-align: 1.25rem;
+    width: 45%;
+    margin-left: 3.125rem;
+    margin-top: 0rem;
   }
 
   #display {
@@ -221,16 +214,16 @@ label {
 
 @media (max-width: 400px) {
   .drum-pad {
-    width: 90px;
-    height: 90px;
+    width: 5.625rem;
+    height: 5.625rem;
     line-height: 1;
   }
 }
 
 @media (max-width: 370px) {
   .drum-pad {
-    width: 75px;
-    height: 75px;
+    width: 4.6875rem;
+    height: 4.6875rem;
     line-height: 0.5;
   }
 }

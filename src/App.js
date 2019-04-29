@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import Drums from './components/Drums';
 import Controls from './components/Controls';
-
 import './App.css';
-
 import { connect } from 'react-redux';
 
 import {
@@ -28,7 +26,6 @@ import {
 } from './actions';
 
 class App extends Component {
-
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeydown);
     this.setVolume();
@@ -40,7 +37,6 @@ class App extends Component {
 
   playSound = (soundId) => {
     const audio = document.getElementById(soundId);
-    console.log('audio', audio);
     audio.currentTime = 0
     audio.play();
   }
@@ -48,31 +44,31 @@ class App extends Component {
   handleClick = (e) => {
     let sound;
     switch(e.target.id) {
-      case this.props.myData.qName.replace(" ", "-").toLowerCase():
+      case this.props.myData.qName.replace(' ', '-').toLowerCase():
         sound = 'Q';
         break;
-      case this.props.myData.wName.replace(" ", "-").toLowerCase():
+      case this.props.myData.wName.replace(' ', '-').toLowerCase():
        sound = 'W';
         break;
-      case this.props.myData.eName.replace(" ", "-").toLowerCase():
+      case this.props.myData.eName.replace(' ', '-').toLowerCase():
         sound = 'E';
         break;
-      case this.props.myData.aName.replace(" ", "-").toLowerCase():
+      case this.props.myData.aName.replace(' ', '-').toLowerCase():
         sound = 'A';
         break;
-      case this.props.myData.sName.replace(" ", "-").toLowerCase():
+      case this.props.myData.sName.replace(' ', '-').toLowerCase():
         sound = 'S';
         break;
-      case this.props.myData.dName.replace(" ", "-").toLowerCase():
+      case this.props.myData.dName.replace(' ', '-').toLowerCase():
         sound = 'D';
         break;
-      case this.props.myData.zName.replace(" ", "-").toLowerCase():
+      case this.props.myData.zName.replace(' ', '-').toLowerCase():
         sound = 'Z';
         break;
-      case this.props.myData.xName.replace(" ", "-").toLowerCase():
+      case this.props.myData.xName.replace(' ', '-').toLowerCase():
         sound = 'X';
         break;
-      case this.props.myData.cName.replace(" ", "-").toLowerCase():
+      case this.props.myData.cName.replace(' ', '-').toLowerCase():
         sound = 'C';
         break;
       default:
@@ -101,31 +97,31 @@ class App extends Component {
   handleKeydown = (e) => {
     switch(e.keyCode) {
       case 81:
-        document.getElementById(this.props.myData.qName.replace(" ", "-").toLowerCase()).click();
+        document.getElementById(this.props.myData.qName.replace(' ', '-').toLowerCase()).click();
         break;
       case 87:
-        document.getElementById(this.props.myData.wName.replace(" ", "-").toLowerCase()).click();
+        document.getElementById(this.props.myData.wName.replace(' ', '-').toLowerCase()).click();
         break;
       case 69:
-        document.getElementById(this.props.myData.eName.replace(" ", "-").toLowerCase()).click();
+        document.getElementById(this.props.myData.eName.replace(' ', '-').toLowerCase()).click();
         break;
       case 65:
-        document.getElementById(this.props.myData.aName.replace(" ", "-").toLowerCase()).click();
+        document.getElementById(this.props.myData.aName.replace(' ', '-').toLowerCase()).click();
         break;
       case 83:
-        document.getElementById(this.props.myData.sName.replace(" ", "-").toLowerCase()).click();
+        document.getElementById(this.props.myData.sName.replace(' ', '-').toLowerCase()).click();
         break;
       case 68:
-        document.getElementById(this.props.myData.dName.replace(" ", "-").toLowerCase()).click();
+        document.getElementById(this.props.myData.dName.replace(' ', '-').toLowerCase()).click();
         break;
       case 90:
-        document.getElementById(this.props.myData.zName.replace(" ", "-").toLowerCase()).click();
+        document.getElementById(this.props.myData.zName.replace(' ', '-').toLowerCase()).click();
         break;
       case 88:
-        document.getElementById(this.props.myData.xName.replace(" ", "-").toLowerCase()).click();
+        document.getElementById(this.props.myData.xName.replace(' ', '-').toLowerCase()).click();
         break;
       case 67:
-        document.getElementById(this.props.myData.cName.replace(" ", "-").toLowerCase()).click();
+        document.getElementById(this.props.myData.cName.replace(' ', '-').toLowerCase()).click();
         break;
       default:
         break;
@@ -264,7 +260,7 @@ class App extends Component {
 
   toggleMute = () => {
     if (this.props.myData.power === 'on') {
-      if (this.props.myData.muted === false) {
+      if (!this.props.myData.muted) {
         this.mute();
       } else {
         this.unmute();
