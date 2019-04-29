@@ -19,148 +19,34 @@ import {
   UPDATE_C_ANIMATION
 } from '../actions/types';
 
-/*const standardSounds = [
-  {
-    keyToPress: 'Q',
-    soundName: 'Crash Cymbal',
-    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/crashes/92[kb]909-bright-crash.aif.mp3',
-    keyCode: 81
-  },
-  {
-    keyToPress: 'W',
-    soundName: 'Open Hi-hat',
-    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/hats/88[kb]bigopenhh.aif.mp3',
-    keyCode: 87
-  },
-  {
-    keyToPress: 'E',
-    soundName: 'Ride Cymbal',
-    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/rides/87[kb]cleanride.aif.mp3',
-    keyCode: 69
-  },
-  {
-    keyToPress: 'A',
-    soundName: 'Snare',
-    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/snares/56[kb]ambient_snare.aif.mp3',
-    keyCode: 65
-  },
-  {
-    keyToPress: 'S',
-    soundName: 'High Tom',
-    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/260[kb]ambient_tom_1.aif.mp3',
-    keyCode: 83
-  },
-  {
-    keyToPress: 'D',
-    soundName: 'Mid Tom',
-    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/307[kb]ambient_tom_2.aif.mp3',
-    keyCode: 68
-  },
-  {
-    keyToPress: 'Z',
-    soundName: 'Closed Hi-hat',
-    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/hats/10[kb]clear-hat.aif.mp3',
-    keyCode: 90
-  },
-  {
-    keyToPress: 'X',
-    soundName: 'Bass Drum',
-    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/kicks/160[kb]ambient_kick.aif.mp3',
-    keyCode: 88
-  },
-  {
-    keyToPress: 'C',
-    soundName: 'Low Tom',
-    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/339[kb]ambient_tom_3.aif.mp3',
-    keyCode: 67
-  }
-];
-
-const electroSounds = [
-  {
-    keyToPress: 'Q',
-    soundName: 'Space Crash Cymbal',
-    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/crashes/281[kb]spacecrash.aif.mp3',
-    keyCode: 81
-  },
-  {
-    keyToPress: 'W',
-    soundName: 'Clap',
-    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/claps/13[kb]Clap2.wav.mp3',
-    keyCode: 87
-  },
-  {
-    keyToPress: 'E',
-    soundName: 'Electro Ride Cymbal',
-    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/rides/46[kb]electroride.aif.mp3',
-    keyCode: 69
-  },
-  {
-    keyToPress: 'A',
-    soundName: 'Electro Snare',
-    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/snares/12[kb]elecsnare.aif.mp3',
-    keyCode: 65
-  },
-  {
-    keyToPress: 'S',
-    soundName: 'High Electro Tom',
-    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/86[kb]hietom.aif.mp3',
-    keyCode: 83
-  },
-  {
-    keyToPress: 'D',
-    soundName: 'Mid Electro Tom',
-    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/86[kb]medetom.aif.mp3',
-    keyCode: 68
-  },
-  {
-    keyToPress: 'Z',
-    soundName: 'Closed Electro Hi-hat',
-    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/hats/79[kb]ehat.aif.mp3',
-    keyCode: 90
-  },
-  {
-    keyToPress: 'X',
-    soundName: 'Dance Kick',
-    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/kicks/86[kb]deep_dance_kick_1.aif.mp3',
-    keyCode: 88
-  },
-  {
-    keyToPress: 'C',
-    soundName: 'Low Electro Tom',
-    clip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/86[kb]loetom.aif.mp3',
-    keyCode: 67
-  }
-];*/
-
 const initialState = {
   q: 'Q',
   qName: 'Crash Cymbal',
-  qClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/crashes/92[kb]909-bright-crash.aif.mp3',
+  qClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Crashes/92[kb]909-bright-crash.aif.mp3',
   w: 'W',
   wName: 'Open Hi-hat',
-  wClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/hats/88[kb]bigopenhh.aif.mp3',
+  wClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/88[kb]bigopenhh.aif.mp3',
   e: 'E',
   eName: 'Ride Cymbal',
-  eClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/rides/87[kb]cleanride.aif.mp3',
+  eClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Rides/87[kb]cleanride.aif.mp3',
   a: 'A',
   aName: 'Snare',
-  aClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/snares/56[kb]ambient_snare.aif.mp3',
+  aClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Snares/56[kb]ambient_snare.aif.mp3',
   s: 'S',
   sName: 'High Tom',
-  sClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/260[kb]ambient_tom_1.aif.mp3',
+  sClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/260[kb]ambient_tom_1.aif.mp3',
   d: 'D',
   dName: 'Mid Tom',
-  dClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/307[kb]ambient_tom_2.aif.mp3',
+  dClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/307[kb]ambient_tom_2.aif.mp3',
   z: 'Z',
   zName: 'Closed Hi-hat',
-  zClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/hats/10[kb]clear-hat.aif.mp3',
+  zClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/10[kb]clear-hat.aif.mp3',
   x: 'X',
   xName: 'Bass Drum',
-  xClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/kicks/160[kb]ambient_kick.aif.mp3',
+  xClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/160[kb]ambient_kick.aif.mp3',
   c: 'C',
   cName: 'Low Tom',
-  cClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/339[kb]ambient_tom_3.aif.mp3',
+  cClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/339[kb]ambient_tom_3.aif.mp3',
   currentSound: 'Standard Kit',
   standard: true,
   power: 'on',
@@ -189,45 +75,45 @@ export default function(state = initialState, action) {
       return {
         ...state,
         qName: 'Crash Cymbal',
-        qClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/crashes/92[kb]909-bright-crash.aif.mp3',
+        qClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Crashes/92[kb]909-bright-crash.aif.mp3',
         wName: 'Open Hi-hat',
-        wClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/hats/88[kb]bigopenhh.aif.mp3',
+        wClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/88[kb]bigopenhh.aif.mp3',
         eName: 'Ride Cymbal',
-        eClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/rides/87[kb]cleanride.aif.mp3',
+        eClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Rides/87[kb]cleanride.aif.mp3',
         aName: 'Snare',
-        aClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/snares/56[kb]ambient_snare.aif.mp3',
+        aClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Snares/56[kb]ambient_snare.aif.mp3',
         sName: 'High Tom',
-        sClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/260[kb]ambient_tom_1.aif.mp3',
+        sClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/260[kb]ambient_tom_1.aif.mp3',
         dName: 'Mid Tom',
-        dClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/307[kb]ambient_tom_2.aif.mp3',
+        dClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/307[kb]ambient_tom_2.aif.mp3',
         zName: 'Closed Hi-hat',
-        zClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/hats/10[kb]clear-hat.aif.mp3',
+        zClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/10[kb]clear-hat.aif.mp3',
         xName: 'Bass Drum',
-        xClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/kicks/160[kb]ambient_kick.aif.mp3',
+        xClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/160[kb]ambient_kick.aif.mp3',
         cName: 'Low Tom',
-        cClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/339[kb]ambient_tom_3.aif.mp3',
+        cClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/339[kb]ambient_tom_3.aif.mp3',
       }
     case SET_ALT_SOUNDS:
       return {
         ...state,
         qName: 'Space Crash Cymbal',
-        qClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/crashes/281[kb]spacecrash.aif.mp3',
+        qClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Crashes/281[kb]spacecrash.aif.mp3',
         wName: 'Clap',
-        wClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/claps/13[kb]Clap2.wav.mp3',
+        wClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Claps/13[kb]Clap2.wav.mp3',
         eName: 'Electro Ride Cymbal',
-        eClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/rides/46[kb]electroride.aif.mp3',
+        eClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Rides/46[kb]electroride.aif.mp3',
         aName: 'Electro Snare',
-        aClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/snares/12[kb]elecsnare.aif.mp3',
+        aClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Snares/12[kb]elecsnare.aif.mp3',
         sName: 'High Electro Tom',
-        sClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/86[kb]hietom.aif.mp3',
+        sClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/86[kb]hietom.aif.mp3',
         dName: 'Mid Electro Tom',
-        dClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/86[kb]medetom.aif.mp3',
+        dClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/86[kb]medetom.aif.mp3',
         zName: 'Closed Electro Hi-hat',
-        zClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/hats/79[kb]ehat.aif.mp3',
+        zClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/79[kb]ehat.aif.mp3',
         xName: 'Dance Kick',
-        xClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/kicks/86[kb]deep_dance_kick_1.aif.mp3',
+        xClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/86[kb]deep_dance_kick_1.aif.mp3',
         cName: 'Low Electro Tom',
-        cClip: 'https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/toms/86[kb]loetom.aif.mp3',
+        cClip: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/86[kb]loetom.aif.mp3',
       }
     case UPDATE_STANDARD:
       return {
