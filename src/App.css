@@ -33,7 +33,8 @@ body {
 .drum-pad {
   width: 100px;
   height: 100px;
-  margin: auto;
+  /*margin: auto;*/
+  margin-left: 5px;
   /*border-radius: 5px;*/
   -webkit-box-shadow: 0px 5px 10px rgba(0,0,0,0.7);
   -moz-box-shadow: 0px 5px 10px rgba(0,0,0,0.7);
@@ -100,34 +101,13 @@ body {
   cursor: pointer;
 }
 
-
-@media (min-width: 768px) {
-  #drum-machine {
-    margin-top: 100px;
-  }
-
-  #drums {
-    width: 45%;
-    display: inline-block;
-    margin-left: 10px;
-  }
-
-  #controls {
-    width: 45%;
-    display: inline-block;
-    margin-left: 50px;
-    margin-top: 0px;
-    vertical-align: 20px;
-  }
-}
-
 #display {
   border: 2px solid #E37222;
   background-color: #078898;
   color: #fff;
   padding: 20px;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.25rem;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -212,4 +192,45 @@ label {
 
 .btn-toggle.active {
   background-color: #E37222;
+}
+
+
+@media (min-width: 768px) {
+  #drum-machine {
+    margin-top: 100px;
+  }
+
+  #drums {
+    width: 45%;
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  #controls {
+    width: 45%;
+    display: inline-block;
+    margin-left: 50px;
+    margin-top: 0px;
+    vertical-align: 20px;
+  }
+
+  #display {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .drum-pad {
+    width: 90px;
+    height: 90px;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 370px) {
+  .drum-pad {
+    width: 75px;
+    height: 75px;
+    line-height: 0.5;
+  }
 }
