@@ -10,6 +10,20 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 
+import * as firebase from 'firebase';
+
+const FIREBASE_API_KEY = process.env.REACT_APP_FIREBASE_API_KEY;
+
+const config = {
+  apiKey: FIREBASE_API_KEY,
+  authDomain: "drum-machine-5bfd0.firebaseapp.com",
+  databaseURL: "https://drum-machine-5bfd0.firebaseio.com",
+  projectId: "drum-machine-5bfd0",
+  storageBucket: "drum-machine-5bfd0.appspot.com",
+  messagingSenderId: "620669528200"
+};
+firebase.initializeApp(config);
+
 const initialState = {};
 const store = createStore(
   rootReducer,
